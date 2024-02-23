@@ -45,3 +45,31 @@ let rec sum lst =
 (**
 if you want to see how sequence of computaations happens you can insert #trace sum    
 *)
+
+let rec length lst = 
+  match lst with
+  | [] -> 0
+  | h :: t -> 1 + length t;;
+  (** Here instead of h we can also use underscore _ since we do not use this *)
+
+
+
+(**
+Recursion function that appends list into anothe list
+*)
+
+let rec append lst1 lst2 = 
+  match lst1 with 
+  | [] -> lst2
+  | h :: t -> h :: append t lst2;;
+
+
+(*** Checking if listr is empty *)
+
+let is_empty lst = 
+  match lst with 
+  | [] -> true
+  | h :: t -> false
+
+(** Another more simple way *)
+let empty lst = lst = []
